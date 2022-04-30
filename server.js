@@ -75,6 +75,10 @@ app.get('/app/', (req, res) => {
         res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
         res.end(res.statusCode+ ' ' +res.statusMessage)
     });
+app.get('/app/flip', (req,res) => {
+        res.contentType('text/json');
+        res.status(200).json({'flip' : coinFlip()});
+    });
 app.get('/app/flips/:number', (req, res) => {
     res.contentType('text/json');
     const flips = coinFlips(req.params.number);
