@@ -63,7 +63,10 @@ function flipACoin(call) {
 app.use(function(req, res){
     res.status(404).send('404 NOT FOUND')
 });
-
+app.use(function(req,res) {
+    res.status(404).end('Endpoint does not exist');
+    res.type('text/plain');
+});
 app.get('/app/', (req, res) => {
     // Respond with status 200
         res.statusCode = 200;
