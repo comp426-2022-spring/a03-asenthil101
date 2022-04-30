@@ -72,3 +72,17 @@ app.get('/app/', (req, res) => {
         res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
         res.end(res.statusCode+ ' ' +res.statusMessage)
     });
+app.get('/app/flips/:number', (req, res) => {
+    res.contentType('text/json');
+    const flips = coinFlips(req.params.number);
+    const count = countFlips(flips);
+    res.status(200).json({'raw':flips,'summary' : count});
+});
+app.get('/app/flip/call/heads', (req,res) => {
+    res.contentType('text/json');
+    res.status(200).json(flipACoin('heads'));
+});
+app.get('/app/flip/call/tails', (req,res) => {
+    res.contentType('text/json');
+    res.status(200).json(flipACoin('tails'));
+});
