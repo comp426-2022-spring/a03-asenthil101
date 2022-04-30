@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express
-const args = require('minimst')(process.argv.slice(2))
+const args = require('minimist')(process.argv.slice(2))
 const HTTP_PORT = args.port || 5000;
 // Start an app server
 const server = app.listen(HTTP_PORT, () => {
