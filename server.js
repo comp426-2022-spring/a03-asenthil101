@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
 const args = require('minimist')(process.argv.slice(2))
-const HTTP_PORT = args.HTTP_PORT || 5000;
+const port = args.port || 5000;
 // Start an app server
-const server = app.listen(HTTP_PORT, () => {
-    console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
+const server = app.listen(port, () => {
+    console.log('App listening on port %PORT%'.replace('%PORT%',port))
 });
 function coinFlip() {
     var randomNum = Math.random()
