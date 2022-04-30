@@ -6,7 +6,7 @@ const HTTP_PORT = args.port || 5000;
 const server = app.listen(HTTP_PORT, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
 });
-export function coinFlip() {
+function coinFlip() {
     var randomNum = Math.random()
     if (randomNum > 0.5) {
       return "heads"
@@ -15,7 +15,7 @@ export function coinFlip() {
       return "tails"
     }
   }
-export function coinFlips(flips) { 
+function coinFlips(flips) { 
     let flipList = []; 
     let i = 0; 
     for (let i=0; i < flips; i++) {
@@ -23,7 +23,7 @@ export function coinFlips(flips) {
     }
     return flipList;
 }
-export function countFlips(array) {
+function countFlips(array) {
     var count;
     var heads = 0;
     var tails = 0;
@@ -44,7 +44,7 @@ export function countFlips(array) {
     }
     return count;
 }
-export function flipACoin(call) {
+function flipACoin(call) {
     var statement = {
       call,
       flip: coinFlip(),
